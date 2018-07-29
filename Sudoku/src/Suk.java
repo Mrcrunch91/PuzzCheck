@@ -1,21 +1,22 @@
 
-package suk;
+
+
 
 import java.io.*;
 import java.util.*;
 
 
 public class Suk {
-   private final static int boxSIZE = 3;
+   private final static int BOXSIZE = 3;
    private final static int SIZE = 9;
    
    public static int checkBox(int[][] matrix, int startRow, int startCol){
             
       
-       for(int i = startRow; i<(startRow + boxSIZE); i++){
-           for(int j = startCol; j< (startCol + boxSIZE); j++){               
-               for(int k = startRow; k<(startRow + boxSIZE); k++){
-                     for(int p = startCol; p < (startCol + boxSIZE); p++){               
+       for(int i = startRow; i<(startRow + BOXSIZE); i++){
+           for(int j = startCol; j< (startCol + BOXSIZE); j++){               
+               for(int k = startRow; k<(startRow + BOXSIZE); k++){
+                     for(int p = startCol; p < (startCol + BOXSIZE); p++){               
                             if(matrix[i][j] == matrix[k][p] && k != i)
                                 return 1;
                           
@@ -29,8 +30,8 @@ public class Suk {
    }
    
     public static int checkBoxes(int[][] matrix){
-        for(int i = 0; i<SIZE; i+=boxSIZE){
-            for(int j = 0; j< SIZE; j+=boxSIZE){
+        for(int i = 0; i<SIZE; i+=BOXSIZE){
+            for(int j = 0; j< SIZE; j+=BOXSIZE){
              if(checkBox(matrix,i,j) == 1)
                  return 1;
             }
