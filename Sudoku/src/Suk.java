@@ -7,16 +7,16 @@ import java.util.*;
 
 
 public class Suk {
-   private final static int BOXSIZE = 3;
+   private final static int horse = 3;
    private final static int SIZE = 9;
    
    public static int checkBox(int[][] matrix, int startRow, int startCol){
             
       
-       for(int i = startRow; i<(startRow + BOXSIZE); i++){
-           for(int j = startCol; j< (startCol + BOXSIZE); j++){               
-               for(int k = startRow; k<(startRow + BOXSIZE); k++){
-                     for(int p = startCol; p < (startCol + BOXSIZE); p++){               
+       for(int i = startRow; i<(startRow + horse); i++){
+           for(int j = startCol; j< (startCol + horse); j++){               
+               for(int k = startRow; k<(startRow + horse); k++){
+                     for(int p = startCol; p < (startCol + horse); p++){               
                             if(matrix[i][j] == matrix[k][p] && k != i)
                                 return 1;
                           
@@ -30,8 +30,8 @@ public class Suk {
    }
    
     public static int checkBoxes(int[][] matrix){
-        for(int i = 0; i<SIZE; i+=BOXSIZE){
-            for(int j = 0; j< SIZE; j+=BOXSIZE){
+        for(int i = 0; i<SIZE; i+=horse){
+            for(int j = 0; j< SIZE; j+=horse){
              if(checkBox(matrix,i,j) == 1)
                  return 1;
             }
